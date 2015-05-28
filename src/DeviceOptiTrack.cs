@@ -38,6 +38,9 @@ namespace VVVV.Nodes
 		// NB: data stream on the other could not be configured...
 		[Input("Port", DefaultValue = 1510, IsSingle = true)]
 		public ISpread<int> FPort;
+
+        [Input("Update", DefaultBoolean = false, IsSingle = true, IsBang = true)]
+        public IDiffSpread<bool> FUpdate;
 		
 		[Input("Enabled", DefaultValue = 0, IsSingle = true)]
 		public ISpread<bool> FEnabled;
@@ -154,22 +157,14 @@ namespace VVVV.Nodes
                 		}
                 	}
 
-
-                    // [NatNet] request data descriptions from server app.
-                    List<NatNetML.DataDescriptor> descs = new List<NatNetML.DataDescriptor>();
-                    bool bSuccess = mNatNet.GetDataDescriptions(out descs);
-                    if (bSuccess) {
-                        foreach (NatNetML.DataDescriptor d in descs) {
-                            // RigidBodies
-                            if (d.type == (int)NatNetML.DataDescriptorType.eRigidbodyData) {
-                                NatNetML.RigidBody rb = (NatNetML.RigidBody)d;
-                                //FLogger.Log(LogType.Debug, "RigidBody: " + rb.Name);
-                            	mRBNames.Add(rb.Name);
-                            }
-                        }
-                    }
+                    //Get the rigid body names
+                    this.RequestDataDescription();
                 } else {
                     // Already connected, update output
+
+                    // Upon update, query server for data description
+                    if (FUpdate.IsChanged)
+                        this.RequestDataDescription();
                 	lock(syncLock) {
                 		//FLogger.Log(LogType.Debug, "" + m_FrameQueue.Count);
                 		while(m_FrameQueue.Count > 0) {
@@ -228,6 +223,30 @@ namespace VVVV.Nodes
                 }
             }
 		}
+
+
+        private void RequestDataDescription()
+        {
+            //Clear previous rigid bodies records
+            mRBNames.Clear();
+
+            // [NatNet] request data descriptions from server app.
+            List<NatNetML.DataDescriptor> descs = new List<NatNetML.DataDescriptor>();
+            bool bSuccess = mNatNet.GetDataDescriptions(out descs);
+            if (bSuccess)
+            {
+                foreach (NatNetML.DataDescriptor d in descs)
+                {
+                    // RigidBodies
+                    if (d.type == (int)NatNetML.DataDescriptorType.eRigidbodyData)
+                    {
+                        NatNetML.RigidBody rb = (NatNetML.RigidBody)d;
+                        //FLogger.Log(LogType.Debug, "RigidBody: " + rb.Name);
+                        mRBNames.Add(rb.Name);
+                    }
+                }
+            }
+        }
 
 		
 		// [NatNet] m_NatNet_OnFrameReady will be called when a frame of Mocap
