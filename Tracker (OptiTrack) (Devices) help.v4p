@@ -1,0 +1,37 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="C:\vvvv\contributions\plugins\optitrack\Tracker (OptiTrack) (Devices) help.v4p" systemname="Tracker (OptiTrack) (Devices) help" filename="C:\vvvv\contributions\plugins\optitrack\Tracker (OptiTrack) (Devices) help.v4p">
+   <BOUNDS type="Window" left="16410" top="8265" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="image" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="225" width="5100" height="450">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Tracker (OptiTrack) (Devices)|">
+   </PIN>
+   <PIN pinname="Output String" slicecount="1" visible="0" values="||">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" values="14">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="600" width="5100" height="600">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="600" width="5100" height="600">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Get information from OptiTrack camera through NatNet protocol|">
+   </PIN>
+   <PIN pinname="Output String" slicecount="1" visible="0" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="Tracker (OptiTrack) (Devices)" componentmode="Hidden" id="0" systemname="Tracker (OptiTrack) (Devices)" filename="bin\DeviceOptiTrack.dll">
+   <BOUNDS type="Node" left="2550" top="3600" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2550" top="3600" width="0" height="0">
+   </BOUNDS>
+   </NODE>
+   </PATCH>
