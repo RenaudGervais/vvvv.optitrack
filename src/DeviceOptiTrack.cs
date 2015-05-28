@@ -22,13 +22,10 @@ namespace VVVV.Nodes
 	public class DeviceOptiTrackNode : IPluginEvaluate
 	{
 		#region fields & pins
-        //[Input("Rigid Body Name")]
-        //public ISpread<String> FRigidBody;
-		
-		[Input("Local", DefaultString = "193.50.110.181", IsSingle = true)]
+		[Input("Local", DefaultString = "192.168.0.1", IsSingle = true)]
 		public ISpread<String> FLocal;
 		
-		[Input("Server", DefaultString = "193.50.110.181", IsSingle = true)]
+		[Input("Server", DefaultString = "192.168.1.1", IsSingle = true)]
 		public ISpread<String> FServer;
 		
 		// Use multicast by default
@@ -86,14 +83,6 @@ namespace VVVV.Nodes
 			//	0: Multicast
 			//	1: Unicast
 			mNatNet = new NatNetClientML(0);
-			
-			// for what it's worth, too early to read pins
-			/*if (FEnabled[0]== true) {		
-				mNatNet = new NatNetClientML(0);
-			}
-			else {
-				mNatNet = new NatNetClientML(1);
-			}*/
 			
 			mFrameOfData = new NatNetML.FrameOfMocapData();
 			m_FrameQueue = new Queue<NatNetML.FrameOfMocapData>();
@@ -233,6 +222,7 @@ namespace VVVV.Nodes
             } else {
                 //If connected already, disconnect, else, do nothing
                 if(FConnected[0]) {
+                    mRBNames.Clear();
                     returnCode = mNatNet.Uninitialize();
                     FConnected[0] = (0 == returnCode);
                 }
