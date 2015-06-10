@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\vvvv\contributions\plugins\optitrack\Tracker (OptiTrack) (Devices) help.v4p" systemname="Tracker (OptiTrack) (Devices) help" filename="C:\vvvv\contributions\plugins\optitrack\Tracker (OptiTrack) (Devices) help.v4p">
-   <BOUNDS type="Window" left="4530" top="5700" width="9000" height="6000">
+   <PATCH nodename="C:\vvvv\contributions\plugins\Optitrack\Device (OptiTrack) (Devices) help.v4p" systemname="Device (OptiTrack) (Devices) help" filename="C:\vvvv\contributions\plugins\Optitrack\Device (OptiTrack) (Devices) help.v4p" scrollx="0" scrolly="360">
+   <BOUNDS type="Window" left="9540" top="3360" width="16020" height="10995">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -11,7 +11,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="225" top="225" width="5100" height="450">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="0" values="|Tracker (OptiTrack) (Devices)|">
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Device (OptiTrack) (Devices)|">
    </PIN>
    <PIN pinname="Output String" slicecount="1" visible="0" values="||">
    </PIN>
@@ -26,30 +26,6 @@
    <PIN pinname="Input String" slicecount="1" visible="0" values="|Get information from OptiTrack camera through NatNet protocol|">
    </PIN>
    <PIN pinname="Output String" slicecount="1" visible="0" values="||">
-   </PIN>
-   </NODE>
-   <NODE nodename="Tracker (OptiTrack) (Devices)" componentmode="Hidden" id="0" systemname="Tracker (OptiTrack) (Devices)" filename="bin\DeviceOptiTrack.dll">
-   <BOUNDS type="Node" left="2235" top="3450" width="6240" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2235" top="3450" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Local" visible="1">
-   </PIN>
-   <PIN pinname="Server" visible="1">
-   </PIN>
-   <PIN pinname="Port" visible="1">
-   </PIN>
-   <PIN pinname="Update" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   <PIN pinname="Connected" visible="1">
-   </PIN>
-   <PIN pinname="Rigid body name" visible="1">
-   </PIN>
-   <PIN pinname="QuaternionXYZW" visible="1">
-   </PIN>
-   <PIN pinname="PositionXYZ" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="IP (Network)" nodename="IP (Network)" componentmode="Hidden" id="4">
@@ -92,18 +68,6 @@
    <LINKPOINT x="2850" y="2438">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="0" dstpinname="Local" linkstyle="VHV">
-   <LINKPOINT x="2255" y="3150">
-   </LINKPOINT>
-   <LINKPOINT x="2260" y="3150">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="0" dstpinname="Server" linkstyle="VHV">
-   <LINKPOINT x="2300" y="3135">
-   </LINKPOINT>
-   <LINKPOINT x="3775" y="3135">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5325" top="2790" width="795" height="240">
    </BOUNDS>
@@ -120,8 +84,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Port">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Port">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6885" top="1305" width="480" height="480">
    </BOUNDS>
@@ -139,15 +101,15 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Update">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Update">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8430" top="1245" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="8430" top="1245" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -159,13 +121,13 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8430" top="4395" width="480" height="480">
+   <BOUNDS type="Box" left="7170" top="4065" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="8430" top="4395" width="0" height="0">
+   <BOUNDS type="Node" left="7170" top="4065" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -177,9 +139,9 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Connected">
    </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Connected" dstnodeid="10" dstpinname="Y Input Value">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="11" systemname="IOBox (String)">
    <BOUNDS type="Box" left="2220" top="4335" width="795" height="240">
    </BOUNDS>
@@ -193,9 +155,9 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Rigid body name|">
    </PIN>
+   <PIN pinname="Input String" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Rigid body name" dstnodeid="11" dstpinname="Input String">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="12" systemname="IOBox (String)">
    <BOUNDS type="Node" left="6480" top="2010" width="5550" height="270">
    </BOUNDS>
@@ -210,112 +172,122 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="Translate (Transform Vector)" nodename="Translate (Transform Vector)" componentmode="Hidden" id="18">
-   <BOUNDS type="Node" left="3930" top="4815" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="XYZ" visible="1" slicecount="3" values="0,0,0">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="17">
-   <BOUNDS type="Node" left="5550" top="4800" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="XYZ" visible="1" slicecount="3" values="1,1,1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Rotate (Quaternion Vector)" nodename="Rotate (Quaternion Vector)" componentmode="Hidden" id="16">
-   <BOUNDS type="Node" left="4800" top="4815" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Quaternion XYZW" visible="1" slicecount="4" values="0,0,0,1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="4620" top="5805" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Transform In Count" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Transform In 1" visible="1">
-   </PIN>
-   <PIN pinname="Transform In 4" visible="1">
-   </PIN>
-   <PIN pinname="Transform In 2" visible="1">
-   </PIN>
-   <PIN pinname="Transform In 3" visible="1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="17" srcpinname="Transform Out" dstnodeid="15" dstpinname="Transform In 1" linkstyle="VHV">
-   <LINKPOINT x="5580" y="5310">
-   </LINKPOINT>
-   <LINKPOINT x="4650" y="5310">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="17" srcpinname="Transform Out" dstnodeid="15" dstpinname="Transform In 4" linkstyle="VHV">
-   <LINKPOINT x="5645" y="5335">
-   </LINKPOINT>
-   <LINKPOINT x="5125" y="5315">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Transform Out" dstnodeid="15" dstpinname="Transform In 2" linkstyle="VHV">
-   <LINKPOINT x="4415" y="5525">
-   </LINKPOINT>
-   <LINKPOINT x="5245" y="5500">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="18" srcpinname="Transform Out" dstnodeid="15" dstpinname="Transform In 3" linkstyle="VHV">
-   <LINKPOINT x="3475" y="5690">
-   </LINKPOINT>
-   <LINKPOINT x="5495" y="5665">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="14">
-   <BOUNDS type="Node" left="4635" top="6525" width="100" height="100">
+   <BOUNDS type="Node" left="5310" top="5685" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4635" top="6525" width="795" height="240">
+   <BOUNDS type="Box" left="5310" top="5685" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Transform(vvvv)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Transform">
    </PIN>
-   <PIN pinname="Input Node" visible="1">
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="14" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="QuaternionXYZW" dstnodeid="16" dstpinname="Quaternion XYZW" linkstyle="VHV">
-   <LINKPOINT x="5300" y="4260">
-   </LINKPOINT>
-   <LINKPOINT x="5395" y="4260">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="PositionXYZ" dstnodeid="18" dstpinname="XYZ" linkstyle="VHV">
-   <LINKPOINT x="3785" y="4260">
-   </LINKPOINT>
-   <LINKPOINT x="4660" y="4260">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
-   <BOUNDS type="Node" left="5985" top="3885" width="100" height="100">
+   <NODE systemname="RigidBody (OptiTrack) (Devices)" filename="DeviceOptiTrack.csproj" nodename="RigidBody (OptiTrack) (Devices)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="5325" top="4785" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="5985" top="3885" width="795" height="720">
-   </BOUNDS>
-   <PIN pinname="Rows" slicecount="1" values="3">
+   <PIN pinname="Frame" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" values="-1,1,1">
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="QuaternionXYZW" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Marker PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Tracked" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="Device (OptiTrack) (Devices)" componentmode="Hidden" id="0" systemname="Device (OptiTrack) (Devices)" filename="DeviceOptiTrack.csproj">
+   <BOUNDS type="Node" left="2235" top="3450" width="6240" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2235" top="3450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Local" visible="1">
+   </PIN>
+   <PIN pinname="Server" visible="1">
+   </PIN>
+   <PIN pinname="Port" visible="1">
+   </PIN>
+   <PIN pinname="Update" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Connected" visible="1">
+   </PIN>
+   <PIN pinname="Rigid body name" visible="1">
+   </PIN>
+   <PIN pinname="QuaternionXYZW" visible="1">
+   </PIN>
+   <PIN pinname="PositionXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Frame" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="0" dstpinname="Local" linkstyle="VHV">
+   <LINKPOINT x="2255" y="3150">
+   </LINKPOINT>
+   <LINKPOINT x="2260" y="3150">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="0" dstpinname="Server" linkstyle="VHV">
+   <LINKPOINT x="2300" y="3135">
+   </LINKPOINT>
+   <LINKPOINT x="3775" y="3135">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Port">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Update">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Connected" dstnodeid="10" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Rigid body name" dstnodeid="11" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Frame" dstnodeid="21" dstpinname="Frame" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Transform" dstnodeid="14" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="31" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6465" top="6285" width="2130" height="705">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6465" top="6285" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0, 0|">
+   <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Output Value" visible="1">
+   <PIN pinname="Y Input Value" slicecount="3" values=",,">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Marker PositionXYZ|">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="3">
    </PIN>
    </NODE>
-   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="17" dstpinname="XYZ">
+   <LINK srcnodeid="21" srcpinname="Marker PositionXYZ" dstnodeid="31" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="32" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7005" top="5535" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7005" top="5535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Tracked">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Tracked" dstnodeid="32" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
