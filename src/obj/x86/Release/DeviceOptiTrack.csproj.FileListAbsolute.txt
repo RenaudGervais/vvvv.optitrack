@@ -1,0 +1,3 @@
+C:\Users\jasig_000\Documents\GitHub\vvvv.optitrack\bin\DeviceOptiTrack.dll
+C:\Users\jasig_000\Documents\GitHub\vvvv.optitrack\src\obj\x86\Release\DeviceOptiTrack.csprojResolveAssemblyReference.cache
+C:\Users\jasig_000\Documents\GitHub\vvvv.optitrack\src\obj\x86\Release\DeviceOptiTrack.dll

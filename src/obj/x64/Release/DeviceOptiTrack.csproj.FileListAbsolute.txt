@@ -1,0 +1,2 @@
+C:\Users\jasig_000\Documents\GitHub\vvvv.optitrack\bin\DeviceOptiTrack.dll
+C:\Users\jasig_000\Documents\GitHub\vvvv.optitrack\src\obj\x64\Release\DeviceOptiTrack.dll
